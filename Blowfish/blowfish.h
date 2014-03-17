@@ -1,74 +1,75 @@
-/********** blowfish.h **********/
+// blowfish.h     interface file for blowfish.cpp
+// _THE BLOWFISH ENCRYPTION ALGORITHM_
+// by Bruce Schneier
+// Revised code--3/20/94
+// Converted to C++ class 5/96, Jim Conger
 
-#ifndef ___BLOWFISH_H___
-#define ___BLOWFISH_H___
+#define MAXKEYBYTES 	56		// 448 bits max
+#define NPASS           16		// SBox passes
 
+#define DWORD  		unsigned long
+#define WORD  		unsigned short
+#define BYTE  		unsigned char
 
-#define NUM_SUBKEYS  18
-#define NUM_S_BOXES  4
-#define NUM_ENTRIES  256
-
-#define MAX_STRING   256
-#define MAX_PASSWD   56  // 448bits
-
-using namespace std;
-
-#define BIG_ENDIAN
-// #define LITTLE_ENDIAN
-
-
-#ifdef BIG_ENDIAN
-struct WordByte
-{
-	unsigned int zero : 8;
-	unsigned int one : 8;
-	unsigned int two : 8;
-	unsigned int three : 8;
-};
-#endif
-
-#ifdef LITTLE_ENDIAN
-struct WordByte
-{
-	unsigned int three : 8;
-	unsigned int two : 8;
-	unsigned int one : 8;
-	unsigned int zero : 8;
-};
-#endif
-
-union Word
-{
-	unsigned int word;
-	WordByte byte;
-};
-
-struct DWord
-{
-	Word word0;
-	Word word1;
-};
-
-
-class Blowfish
+class CBlowFish
 {
 private:
-	unsigned int PA[NUM_SUBKEYS];
-	unsigned int SB[NUM_S_BOXES][NUM_ENTRIES];
-
-	void Gen_Subkeys(char *);
-	inline void BF_En(Word *, Word *);
-	inline void BF_De(Word *, Word *);
+	DWORD 		* PArray ;
+	DWORD		(* SBoxes)[256];
+	void 		Blowfish_encipher (DWORD *xl, DWORD *xr) ;
+	void 		Blowfish_decipher (DWORD *xl, DWORD *xr) ;
 
 public:
-	Blowfish();
-	~Blowfish();
+			CBlowFish () ;
+			~CBlowFish () ;
+	void 		Initialize (BYTE key[], int keybytes) ;
+	DWORD		GetOutputLength (DWORD lInputLong) ;
+	DWORD		Encode (BYTE * pInput, BYTE * pOutput, DWORD lSize) ;
+	void		Decode (BYTE * pInput, BYTE * pOutput, DWORD lSize) ;
 
-	void Reset();
-	void Set_Passwd(char * = NULL);
-	void Encrypt(void *, unsigned int);
-	void Decrypt(void *, unsigned int);
-};
+} ;
 
+// choose a byte order for your hardware
+#define ORDER_DCBA	// chosing Intel in this case
 
+#ifdef ORDER_DCBA  	// DCBA - little endian - intel
+	union aword {
+	  DWORD dword;
+	  BYTE byte [4];
+	  struct {
+	    unsigned int byte3:8;
+	    unsigned int byte2:8;
+	    unsigned int byte1:8;
+	    unsigned int byte0:8;
+	  } w;
+	};
 #endif
+
+#ifdef ORDER_ABCD  	// ABCD - big endian - motorola
+	union aword {
+	  DWORD dword;
+	  BYTE byte [4];
+	  struct {
+	    unsigned int byte0:8;
+	    unsigned int byte1:8;
+	    unsigned int byte2:8;
+	    unsigned int byte3:8;
+	  } w;
+	};
+#endif
+
+#ifdef ORDER_BADC  	// BADC - vax
+	union aword {
+	  DWORD dword;
+	  BYTE byte [4];
+	  struct {
+	    unsigned int byte1:8;
+	    unsigned int byte0:8;
+	    unsigned int byte3:8;
+	    unsigned int byte2:8;
+	  } w;
+};
+#endif
+
+
+
