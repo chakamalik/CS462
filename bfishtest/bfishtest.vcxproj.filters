@@ -20,10 +20,12 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="blowfish.h2">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="blowfish.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bfishtest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
