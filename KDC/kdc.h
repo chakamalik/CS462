@@ -27,6 +27,11 @@
 #define KDC_PORT 9642
 #define DEBUG
 
+//fer blowfish
+#define DWORD  		unsigned long
+#define WORD  		unsigned short
+#define BYTE  		unsigned char
+
 //not entirely sure what this does
 using boost::asio::ip::udp;
 
