@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KDC", "KDC\KDC.vcxproj", "{DAD0BBB7-5D1B-42C5-9BB3-ECDB87A49D6F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F068CD44-2ADF-4860-A1C7-495363A96E52} = {F068CD44-2ADF-4860-A1C7-495363A96E52}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcxproj", "{CDAF44C0-F42D-4E96-AF76-5EC9908AFB60}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F068CD44-2ADF-4860-A1C7-495363A96E52} = {F068CD44-2ADF-4860-A1C7-495363A96E52}
+	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Blowfish", "Blowfish\Blowfish.vcxproj", "{8D0423DD-1290-4392-9664-9A8279C94C4C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "blowfish", "blowfish\blowfish.vcxproj", "{F068CD44-2ADF-4860-A1C7-495363A96E52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +29,10 @@ Global
 		{CDAF44C0-F42D-4E96-AF76-5EC9908AFB60}.Debug|Win32.Build.0 = Debug|Win32
 		{CDAF44C0-F42D-4E96-AF76-5EC9908AFB60}.Release|Win32.ActiveCfg = Release|Win32
 		{CDAF44C0-F42D-4E96-AF76-5EC9908AFB60}.Release|Win32.Build.0 = Release|Win32
-		{8D0423DD-1290-4392-9664-9A8279C94C4C}.Debug|Win32.ActiveCfg = Debug|Win32
-		{8D0423DD-1290-4392-9664-9A8279C94C4C}.Debug|Win32.Build.0 = Debug|Win32
-		{8D0423DD-1290-4392-9664-9A8279C94C4C}.Release|Win32.ActiveCfg = Release|Win32
-		{8D0423DD-1290-4392-9664-9A8279C94C4C}.Release|Win32.Build.0 = Release|Win32
+		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Debug|Win32.Build.0 = Debug|Win32
+		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Release|Win32.ActiveCfg = Release|Win32
+		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

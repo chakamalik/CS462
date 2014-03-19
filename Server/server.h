@@ -14,6 +14,11 @@
 //for string on ; parsing
 #include <boost/algorithm/string.hpp>
 
+//fer blowfish
+#define DWORD  		unsigned long
+#define WORD  		unsigned short
+#define BYTE  		unsigned char
+
 //USING
 using boost::asio::ip::udp;
 using namespace std;
