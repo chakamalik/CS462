@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Server", "Server\Server.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "blowfish", "blowfish\blowfish.vcxproj", "{F068CD44-2ADF-4860-A1C7-495363A96E52}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Packet", "Project1\Project1.vcxproj", "{9388CE8B-3ED0-4C58-AD68-38669D3AA40B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -33,6 +35,10 @@ Global
 		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Debug|Win32.Build.0 = Debug|Win32
 		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Release|Win32.ActiveCfg = Release|Win32
 		{F068CD44-2ADF-4860-A1C7-495363A96E52}.Release|Win32.Build.0 = Release|Win32
+		{9388CE8B-3ED0-4C58-AD68-38669D3AA40B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9388CE8B-3ED0-4C58-AD68-38669D3AA40B}.Debug|Win32.Build.0 = Debug|Win32
+		{9388CE8B-3ED0-4C58-AD68-38669D3AA40B}.Release|Win32.ActiveCfg = Release|Win32
+		{9388CE8B-3ED0-4C58-AD68-38669D3AA40B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
