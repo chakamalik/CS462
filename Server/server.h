@@ -25,6 +25,7 @@ using namespace std;
 
 //GLOBAL
 string clientList[9];
+string this_client;
 int num_clients;
 string kdc_address;
 string kdc_port;
